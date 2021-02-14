@@ -4,7 +4,7 @@ const readline = require('readline')
 
 class TicTacToe {
   constructor(){
-    // inititae variables
+    // initiate variables
     this.ticTacToe = [];
     this.ticTacToe[8] = undefined;
     this.ticTacToeLayout = '';
@@ -154,7 +154,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
       // wrong position
       self.moveError("Wrong position!!! ");
     }
-    // checkc if position is occupied
+    // check if position is occupied
     if(self.ticTacToe[(position - 1)] !== undefined){
       console.log(self.ticTacToe[(position - 1)])
       // position occupied
