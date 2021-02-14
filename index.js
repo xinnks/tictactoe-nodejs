@@ -105,7 +105,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
         this.endGame();
       }
       checkSet.clear();
-      if(this.ticTacToe[3] && this.ticTacToe[4] && this.ticTacToe[6] && (Array.from(checkSet.add(this.ticTacToe[3]).add(this.ticTacToe[4]).add(this.ticTacToe[6])).length === 1)){
+      if(this.ticTacToe[3] && this.ticTacToe[4] && this.ticTacToe[5] && (Array.from(checkSet.add(this.ticTacToe[3]).add(this.ticTacToe[4]).add(this.ticTacToe[5])).length === 1)){
         console.log(`Player ${this.getPlayerFromChar(this.ticTacToe[3])} Wins!!`);
         this.endGame();
       }
@@ -169,7 +169,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
     }
   }
 
-  // noify wrong moves
+  // notify wrong moves
   moveError(message){
     console.log(`${arguments[0] ? arguments[0]:''}Player ${this.displayPlayer(this.currentPlayer)}, Your move! (position[1-9]): `)
   }
@@ -178,7 +178,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
     this.moverRegister.push({
       position: position,
       char: this.getCharacter(this.currentPlayer),
-      player: this.currentPlayer
+      player: this.displayPlayer(this.currentPlayer)
     });
   }
 
