@@ -15,7 +15,7 @@ class TicTacToe {
 
     // record the moves
     this.ticTacEvent = {position: null, player: null, }
-    this.moverRegister = []; // name, position, value
+    this.moveRegister = [];
     
     this.rl = readline.createInterface({
       input: process.stdin,
@@ -63,7 +63,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
     this.rl.close();
     this.gameEnded = true;
     console.log("Moves history --- ")
-    console.log(this.moverRegister)
+    console.log(this.moveRegister)
     process.exit();
     return false;
   }
@@ -81,7 +81,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
 
   processGame(){
     // at least 5 moves need to have been made
-    if(this.moverRegister.length >= 5){
+    if(this.moveRegister.length >= 5){
       var checkSet = new Set()
       // possible vertical alignments
       if(this.ticTacToe[0] && this.ticTacToe[3] && this.ticTacToe[6] && (Array.from(checkSet.add(this.ticTacToe[0]).add(this.ticTacToe[3]).add(this.ticTacToe[6])).length === 1)){
@@ -175,7 +175,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
   }
 
   recordMove(position, player){
-    this.moverRegister.push({
+    this.moveRegister.push({
       position: position,
       char: this.getCharacter(this.currentPlayer),
       player: this.displayPlayer(this.currentPlayer)
@@ -184,11 +184,11 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
 
   deleteLastMove(){
     // delete character
-    if(this.moverRegister.length > 1){
-      var pos = this.moverRegister[(this.moverRegister.length - 1)].position
+    if(this.moveRegister.length > 1){
+      var pos = this.moveRegister[(this.moveRegister.length - 1)].position
       this.ticTacToe[pos] = ' '
       // unregister move 
-      this.moverRegister.pop();
+      this.moveRegister.pop();
       // continue play
       this.continuePlay()
     } else {
