@@ -10,11 +10,6 @@ class TicTacToe {
     this.ticTacToeLayout = '';
     this.currentPlayer = false; // player 1 = false (O), player 2 = true (X)
     this.gameEnded = false;
-
-    // this.displayLayout(); // display layout
-
-    // record the moves
-    this.ticTacEvent = {position: null, player: null, }
     this.moveRegister = [];
     
     this.rl = readline.createInterface({
@@ -65,7 +60,7 @@ ${this.displayItem(this.ticTacToe[6])} | ${this.displayItem(this.ticTacToe[7])} 
     console.log("Moves history --- ")
     console.log(this.moveRegister)
     process.exit();
-    return false;
+    return false; 
   }
 
   continuePlay(){
